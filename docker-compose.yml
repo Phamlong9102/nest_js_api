@@ -1,0 +1,40 @@
+# THẰNG NÀY LÀ DOCKER COMPOSE CONNECT VỚI PGADMIN WEB
+
+# version: '3.8'
+# services:
+#   nest_js:
+#     image: postgres
+#     environment:
+#       - POSTGRES_USER=phamlong9102
+#       - POSTGRES_PASSWORD=01246910451c
+#       - POSTGRES_DB=
+#     ports:
+#       - '8000:5435'
+#     volumes:
+#       - data:/var/lib/postgresql/data
+
+#   pg-admin:
+#     image: dpage/pgadmin4
+#     environment:
+#       - PGADMIN_DEFAULT_EMAIL=phamlong9102@gmail.com
+#       - PGADMIN_DEFAULT_PASSWORD=01246910451c
+#       - PGADMIN_LISTEN_PORT=3333
+#     ports:
+#       - '3333:3333'
+# volumes:
+#   data:
+
+version: '3.8'
+services:
+  nest_js:
+    image: postgres
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 01246910451c
+      POSTGRES_DB: nest_js
+    networks:
+      - nest_js_free_code_camp
+networks: 
+  nest_js_free_code_camp:
