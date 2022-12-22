@@ -11,7 +11,7 @@ import { UserModule } from './user/user.module';
     PrismaModule,
     BookmarkModule,
     UserModule,
-    // ĐOẠN NÀY THÊM isGlobal là true KHÔNG THÌ NÓ BỊ LỖI
+    // ĐOẠN NÀY THÊM isGlobal là true KHÔNG THÌ NÓ BỊ LỖI CONFIG
     ConfigModule.forRoot({
       isGlobal: true,
     }),
